@@ -1,0 +1,56 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2>ERP System</h2>
+            <h4>Administrateur</h4>
+        </div>
+        <!--<img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">-->
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!--<h2 matSubheader>Pages</h2>-->
+
+  <div class="tab-pane active" id="menu">
+    <nav class="sidebar-nav">
+      <ul class="main-menu metismenu">
+        <li  class="active"><a routerLink="/dashboard"><i class="icon-home"></i><span>Dashboard</span></a></li>
+        <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-user-follow"></i><span>Categorie</span> </a>
+          <ul>
+            <li><a routerLink="/dashboard/categories/show">All Categories</a></li>
+            <li><a routerLink="/dashboard/categories/add">Add Categorie</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-user"></i><span>Produit</span> </a>
+          <ul>
+            <li><a routerLink="/dashboard/produits/show">All Produits</a></li>
+            <li><a routerLink="/dashboard/produits/add">Add Produit</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-user"></i><span>Client</span> </a>
+          <ul>
+            <li><a routerLink="/dashboard/clients/show">All Clients</a></li>
+            <li><a routerLink="/dashboard/clients/add">Add Client</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-user"></i><span>Fournisseur</span> </a>
+          <ul>
+            <li><a routerLink="/dashboard/fournisseurs/show">All Fournisseurs</a></li>
+            <li><a routerLink="/dashboard/fournisseurs/add">Add Fournisseur</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-user"></i><span>Commande</span> </a>
+          <ul>
+            <li><a routerLink="/dashboard/ommandes/show">All Commandes</a></li>
+            <li><a routerLink="/dashboard/commandes/add">Add Commande</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+    <mat-divider></mat-divider>
+
+
+
+</mat-nav-list>

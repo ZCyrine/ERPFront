@@ -1,0 +1,69 @@
+<div class="container-fluid">
+
+  <div class="row clearfix">
+    <div class="col-md-12">
+      <div class="card patients-list">
+        <div class="header">
+          <h2>Commande </h2>
+
+        </div>
+        <div class="body">
+
+
+          <!-- Tab panes -->
+          <div class="tab-content m-t-10 padding-0">
+            <div class="tab-pane table-responsive active show" id="All">
+              <table class="table m-b-0 table-hover">
+                <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Nom & Prénom Client</th>
+                  <!--<th>Marque Produit</th>
+                  <th>Type Produit</th>
+                  <th>PrixC</th>
+                  <th>PrixF</th>
+                  <th>TVA</th>-->
+                  <th>Date Commande</th>
+                  <th>Total Avant Tax</th>
+                  <th>Total Tax</th>
+                  <th>Total Apres Tax</th>
+                  <th>Timbre</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let i of data">
+                  <td>{{i.id}}</td>
+                  <td>{{i.client.nom }} {{ i.client.prenom}}</td>
+                 <ng-container *ngFor="let prd of i.produits">
+
+                  <!--<td>{{prd.marque}}</td>
+                  <td>{{prd.type}}</td>
+                  <td>{{prd.prixC}}</td>
+                  <td>{{prd.prixF}}</td>
+                  <td>{{prd.tva}}</td>-->
+
+
+
+                  <td>{{i.date | date: 'dd/MM/yyyy'}}</td>
+                  <td>{{prd.prixC*prd.quantite}}</td>
+                  <td>{{prd.tva}}</td>
+                  <td>{{(prd.prixC*prd.quantite)-(prd.tva/100)}}</td>
+                  <td>{{i.timbre}}</td>
+                </ng-container>
+                  <td><button (click)="remove(i.id)" class="btn btn-danger btn-sm">Delete</button>
+                  </td>
+                  <td>
+                    <button   class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#id">Update</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

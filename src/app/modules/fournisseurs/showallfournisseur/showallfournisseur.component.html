@@ -1,0 +1,89 @@
+<div class="container-fluid">
+
+  <div class="row clearfix">
+    <div class="col-md-12">
+      <div class="card patients-list">
+        <div class="header">
+          <h2>Catégorie </h2>
+
+        </div>
+        <div class="body">
+
+
+          <!-- Tab panes -->
+          <div class="tab-content m-t-10 padding-0">
+            <div class="tab-pane table-responsive active show" id="All">
+              <table class="table m-b-0 table-hover">
+                <thead class="thead-dark">
+                <tr>
+                  <th>Nom</th>
+                  <th>Adresse</th>
+                  <th>Telephone</th>
+                  <th>Produits</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let i of data">
+                  <td><span >{{i.nom}}</span></td>
+                  <td><span >{{i.adresse}}</span></td>
+                  <td><span >{{i.tel}}</span></td>
+
+                  <td><button  (click)="remove(i.id)" class="btn btn-danger btn-sm">Delete</button>
+                  </td>
+                  <td>
+                    <button  (click)="recuperer(i.id,i.nom , i.adresse , i.tel )" class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#id">Update</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="id" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="title" id="defaultModalLabel">Update Fournisseur</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12 col-md-6 col-sm-6">
+          <div class="body">
+            <form  [formGroup]="fourEdit" >
+              <div class="form-group col-sm-8">
+                <label>Nom</label>
+                <input type="text" formControlName="nom" class="form-control"  />
+              </div>
+
+              <div class="form-group col-sm-8">
+                <label>Telephone</label>
+                <input type="text" formControlName="tel" class="form-control"  />
+              </div>
+              <div class="form-group col-sm-8">
+                <label>Adresse</label>
+                <input type="text" formControlName="adresse" class="form-control"  />
+              </div>
+              <div class="form-group col-sm">
+                <button  type="submit" class="btn btn-primary"  data-dismiss="modal"  >Update</button>
+                <button type="button" class="btn btn-simple" data-dismiss="modal">CLOSE</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
